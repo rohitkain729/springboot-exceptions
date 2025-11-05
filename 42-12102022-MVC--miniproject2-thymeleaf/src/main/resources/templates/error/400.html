@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>400</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/error/400.png'); /* your image path */
+  background-repeat: no-repeat;
+ /*  background-size: cover;    */    
+  
+ 
+  background-position: center;  /* centers the image */
+  background-attachment: fixed; /* keeps it fixed during scroll */
+}
+</style>
+</head>
+<body>
+<a th:href="@{/employee/}"> 
+	
+	<img style="width: 30px;" th:src="@{/images/home.png}" />
+		Home Page
+	</a>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span th:text="${status}"></span>
+
+
+</body>
+</html>

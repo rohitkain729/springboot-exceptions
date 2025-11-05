@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<h1 style="color: red; text-align: center">ADD Employee</h1>
+
+<form th:object="{emp}" method="POST" th:action="@{/employee/emp_register}">
+	<table align="center" bgcolor="cyan">
+		<tr>
+			<td>Employee Name:</td>
+			<td><input type="text" th:field="*{ename}" /></td>
+		</tr>
+		<tr>
+			<td>Employee Desg:</td>
+			<td><input type="text" th:field="*{job}" /></td>
+		</tr>
+		<tr>
+			<td>Employee Salary:</td>
+			<td><input type="text" th:field="*{sal}" /></td>
+		</tr>
+		<tr>
+			<td>Department Id:</td>
+			<td><input type="text" th:field="*{deptno}" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="save" />
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+<center style="margine: 10px">
+
+	<a th:href="@{/employee/}"> 
+	
+	<img style="width: 30px;" th:src="@{/images/home.png}" />
+		Home Page
+	</a>
+
+</center>

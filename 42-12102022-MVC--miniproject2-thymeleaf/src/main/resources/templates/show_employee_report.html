@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+	<div th:if="${!emplist.empty}">
+		<h1 style="color: red; text-align: center">Employee Report</h1>
+		<table border="1" align="center" bgcolor="cyan">
+			<tr>
+				<th>EmpNo</th>
+				<th>Emp Name</th>
+				<th>Job</th>
+				<th>Salary</th>
+				<th>Dept No</th>
+				<th>options</th>
+			</tr>
+				<tr  th:each="emp:${emplist}">
+					<td><span th:text="${emp.eno}"/></td>
+					<td><span th:text="${emp.ename}"/></td>
+					<td><span th:text="${emp.job}"/></td>
+					<td><span th:text="${emp.sal}"/></td>
+					<td><span th:text="${emp.deptno}"/></td>
+					<td><a th:href="@{/employee/emp_edit(no=${emp.eno})}"> <img
+							style="width: 20px" alt="edit" th:src="@{/images/edit1.png}">
+					</a> <a th:href="@{/employee/emp_delete(no=${emp.eno})}" onclick="return confirm('Do you want to delete the record')"> <img style="width: 20px"
+							alt="delete" th:src="@{/images/delete1.png}">
+					</a></td>
+				</tr>
+			</div>
+		</table>
+	
+	<!-- <c:otherwise>
+		<h1 style="color: red; text-align: center">No Record Found</h1>
+	</c:otherwise> -->
+
+<center style="margine: 10px">
+	 <h2>
+		<span th:text="${resultmsg}"></span>
+	</h2>
+	<br>
+	<br> <a th:href="@{/employee/emp_add}"> <img style="width: 30px;" th:src="@{/images/add.png}">
+		Add Employee
+	</a> &nbsp; &nbsp;&nbsp; <a th:href="@{/employee/}"> <img style="width: 30px;" th:src="@{/images/home.png}"/>
+		Home Page
+	</a>
+
+
+</center>
+
